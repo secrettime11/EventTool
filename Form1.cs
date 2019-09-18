@@ -587,7 +587,11 @@ namespace NewEventTool
                                 MessageBox.Show("Please Loading Setting Value", "Message!!");
                             }
                         }
-                        
+                        else
+                        {
+                            MessageBox.Show("Internet Error!!!", "Message!!");
+                        }
+
                     }
                     else if (Cb3Sel == 1)
                     {
@@ -611,6 +615,10 @@ namespace NewEventTool
                             {
                                 MessageBox.Show("Please Loading Setting Value", "Message!!");
                             }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Internet Error!!!", "Message!!");
                         }
                     }
                     if (att1 > 63)
