@@ -219,7 +219,7 @@ namespace NewEventTool
                 isFirst = true;
                 int loop = Int32.Parse(textBox5.Text.ToString());
 
-                for (int i = 1; i <= loop; i++)
+                for (int i = 1; i <= loop + 20; i++)
                 {
                     TcpClient tcpclnt = new TcpClient();
                     tcpclnt.Connect("192.168.0.1", 30002);
@@ -239,6 +239,10 @@ namespace NewEventTool
                     tcpclnt.Close();
                     file.Dispose();
                     Thread.Sleep(1300);
+                    if (loop == LogCount)
+                    {
+                        break;
+                    }
                 }
                 string avg_record = $"{att1}dB 準確率(%): " + Correct_Rate_record.ToString("0.##%") + $"   平均時間(s): " + avtime_record.ToString("f5") + "s";
 
